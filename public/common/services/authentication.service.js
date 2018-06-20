@@ -24,7 +24,7 @@
         // payload = $window.atob(payload);
         // payload = JSON.parse(payload);
 
-        return true //payload.exp > Date.now() / 1000;
+        return true;
       } else {
         return false;
       }
@@ -60,7 +60,8 @@
         return $http.post('/api/logout', currentUser(), {
           headers: {
             Authorization: 'Bearer ' + getToken()
-          }}).success(function () {
+          }
+        }).success(function () {
           $window.localStorage.removeItem('mean-token');
         });
       } else {
